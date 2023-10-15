@@ -1,0 +1,107 @@
+/* Table of Contents:
+ * 1. General Settings
+ * 2. Header
+ * 3. Navigation 
+ * 4. Elkia FLT Entry Article
+ */
+
+
+/* 1. General Settings */
+
+:root {
+	--fs-general: clamp(1.02rem, 2.5vw, 1.27rem);
+
+	--clr-links-base: #40F0E0;
+	--clr-links-hover: #11FF00;
+
+	--clr-article-bg: rgba(128, 128, 128, 0.5); /* gray */
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	word-wrap: break-word;
+
+	background-image: url('../pix/limanu.jpeg');
+	background-size: cover;
+	background-repeat: none;
+	background-attachment: fixed;
+
+	font-size: var(--fs-general);
+	font-family: monospace; 
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-links-base);
+}
+
+a:hover { 
+	color: var(--clr-links-hover);
+}
+
+a:focus {
+	border: 2px solid red;
+	color: darkgreen;
+}
+
+.center { 
+	text-align: center;
+}
+
+
+/* 2. Header */
+
+header {
+	padding-top: 0.1rem;
+	padding-bottom: 0.1rem;
+	background-color: cyan;
+
+	color: yellow;
+	text-shadow: 2px 2px black;
+	text-align: center;
+}
+
+
+/* 3. Navigation */
+
+nav {
+	padding: 0.2rem 0.5rem;
+	background-color: purple;
+	
+	border-top: 3px solid gray;
+	border-bottom: 3px solid gray;
+}
+
+nav a {
+	display: inline-block;
+
+	border: 2px solid red;
+	border-radius: 25px;
+	padding: 0.4rem 0.9rem;
+
+	margin: 0.5rem 0.2rem;
+
+	background-color: gray;
+	color: white;
+}
+
+
+/* 4. Elkia FLT Entry Article */
+
+.enter_elkiaFLT {
+	margin-top: 2rem;
+	text-shadow: 1px 1px gray;
+
+	border-top: 3px solid silver;
+	border-bottom: 2px solid gray;
+	background-color: var(--clr-article-bg);
+
+	width: min(74ch, 90%);
+	margin-inline: auto;
+
+	padding: 1rem 2rem;
+}

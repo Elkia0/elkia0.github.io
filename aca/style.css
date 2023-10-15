@@ -1,0 +1,117 @@
+/* Table of Contents:
+ * 1. Root, General Styling
+ * 2. Header
+ * 3. Navigation
+ * 4. About Section
+ */
+
+
+/* 1. Root, General Styling */
+
+:root {
+	--fs-general: clamp(1.10rem, 2vw, 1.35rem);
+
+	--clr-links-base: #40F0E0;
+	--clr-links-hover: #11FF00;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	word-wrap: break-word;
+
+	background-image: url('pix/limanu.jpeg');
+	background-size: cover;
+	background-repeat: none;
+	background-attachment: fixed;
+
+	font-size: var(--fs-general);
+	font-family: monospace;
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-links-base);
+}
+
+a:hover {
+	color: var(--clr-links-hover);
+}
+
+a:focus {
+	outline: 2px solid yellow;
+	color: darkgreen;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* 2. Header */
+
+header {
+	padding-top: 0.1rem;
+	padding-bottom: 0.1rem;
+	background-color: cyan;
+
+	color: yellow;
+	text-shadow: 2px 2px black;
+	text-align: center;
+}
+
+
+/* 3. Navigation */
+
+nav {
+	padding: 0.2rem 0.5rem;
+	background-color: purple;
+	
+	border-top: 3px solid gray;
+	border-bottom: 3px solid gray;
+}
+
+nav a {
+	display: inline-block;
+
+	border: 2px solid red;
+	border-radius: 25px;
+	padding: 0.4rem 0.9rem;
+
+	margin: 0.5rem 0.2rem;
+
+	background-color: gray;
+	color: white;
+}
+
+
+/* 4. About Section */
+
+main, .about {
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+
+	border: 2px solid blue;
+	width: min(70ch, 90%);
+	margin-inline: auto;
+
+	padding: 0 0.2rem;
+
+	background-color: gray;
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+/* Divergence for /web index.html. Move to own file if more divergences. */
+
+main {
+	padding: 1.1rem 1rem;
+}
+
+main > * + * {
+	display: block;
+	margin-top: 1.9rem;
+}

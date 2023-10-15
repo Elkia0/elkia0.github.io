@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8" />
+	<title>WebDev Introduction</title>
+	<meta name = "description" content = "Introduction to the web." />
+	<meta name = "viewport" content = "width=device-width, initial-scale=1" />
+	<link rel = "icon" type = "image/webp" href = "../../pix/terra_icon.webp" />
+	<link rel = "stylesheet" href = "../../css/pagestyle.css" />
+</head>
+<body>
+	<nav class = "center">
+		<a href = ".."><-- Return to Web Tutorials List</a>
+		<a href = "../htmlbasics1"><-- Previous: HTML Basics 1</a>
+	</nav>
+	<article>
+		<h2 class = "center">HTML Basics 2</h2>
+		<h3 id = "contents" class = "subheading">Contents</h3>
+		<ol>
+			<li><a href = "#contents">Contents</a></li>
+			<li><a href = "#otherlang">Other Languages</a></li>
+			<li><a href = "#langattr">lang Attribute</a></li>
+			<li><a href = "#links">Links</a></li>
+			<li><a href = "#lists">Lists</a></li>
+			<li><a href = "#icons">Webpage Icons</a></li>
+			<li><a href = "#charsetdigression">A Brief Digression About Specifying The Chararacter Set</a></li>
+			<li><a href = "#moreonicons">More on Icons</a></li>
+			<li><a href = "#tables">Tables</a></li>
+			<li><a href = "#movingtext">Moving Text</a></li>
+			<li><a href = "#comments">Comments</a></li>
+			<li><a href = "#afterHTML">After HTML</a></li>
+		</ol>
+		<h3 id = "otherlang" class = "subheading">Other Languages</h3>
+		<p>To add other languages and ensure that the Browser recognizes the characters add the line <code>&ltmeta charset = "utf-8" /&gt</code> at the top of the head, above the title.</p>
+		<p>As you might have noticed this is yet another metadata line, hence the keyword "meta", which simply means it is marking up how the page should be presented rather than what should be presented.</p>
+		<p>The word metadata, by the way, means "data about other data".</p>
+
+		<h3 id = "langattr" class = "subheading">lang Attribute</h3>
+		<p>Another type of metadata that is not labelled as such, however, is the lang attribute.</p>
+		<p>This tells screen readers and Braille displays in which language to assume the text is written.</p>
+		<p>To add a language for a page you can simply add the lang attribute to the starting html tag, but this becomes even more important when adding a quote or section in another language.</p>
+		<p>For example,</p>
+
+<pre><code>&lt!DOCTYPE html&gt
+&lthtml lang = "en_US"&gt
+     &lthead&gt
+          &ltmeta charset = "utf-8" /&gt
+	  &lttitle&gtLove&lt/title&gt
+	  &ltmeta name = "description" content = "Attempting to describe love" /&gt
+	  &ltmeta name = "viewport" content = "width=device-width, initial-scale=1" /&gt
+     &lt/head&gt
+     &ltbody&gt
+          &lth1&gtLove&lt/h1&gt
+	  &ltp&gtThe feeling and indeed presence of connection is something civilizations have engaged in since the dawn of time, as far as we are aware. The Latins or Greeks did not have one name for this, however.&lt/p&gt
+	  &ltp&gtIt is quite interesting that in contrast to our modern one relationship the Greeks would have seen a variety of relationship: Brotherhood, self-love, playfulness, compassion, sexuality, unity, etc.&lt/p&gt
+	  &lth2&gtIt is perhaps, considering how much love is desirable, useful that we look into this part of our life at a deeper level.&lt/p&gt
+	  &lth2&gtFroms of Love&lt/h2&gt
+	  &ltp&gtAlthough this is by no means to devalue the existence of pure moments of connection that helps one feel all these types of love at once, it is useful to look at how we can strengthen individual areas of this great area of our lives so that we can get to that point better.&lt/p&gt
+	  &lth3&gt&ltspan lang = "la"&gtPhilautia&lt/span&gt - Self-love&lt/h3&gt
+	  &ltp&gtWhat better type of love to look at first than self-love. Indeed, you are in a permanent relationship of self-perception. You can never not feel self-love. Any desire, wish or impulse you have, even towards another, shows that you have some desire inside you, and therefore self-love of some kind.&lt/p&gt
+	  &ltp&gtIf you are not aware of this, you may attempt to find self-love only externally. If you can't feel self-love, it is useful to at least feel self-compassion. Look at all that you have done to get here, and all the time you have done your best to be happy.&lt/p&gt
+	  &ltp&gtYou have tried and tried, and that's proof that you are wonderful. That is the beginning of self-love...&lt/p&gt
+	  &lth3&gt&ltspan lang = "la"&gtCaritas&lt/span&gt - Compassion for all&lt/h3&gt
+	  &ltp&gtIt is useful to distinguish self-compassion and compassion for others as unique love relationships.[...]&lt/p&gt
+	  &lta href = "https://elkia.xyz/love"&gt[Source: Elkia wrtiting on "Love"]&lt/a&gt
+     &lt/body&gt
+&lt/html&gt</code></pre>
+	</br>
+
+		<p>Here, if you look, the unchanging, static part of the page known as the "html" has the lang attribute set to "en_US". However, there are two places where words in Latin are used.</p>
+		<p>This makes the experience less fun for users of screen readers or Braille displays.</p>
+		<p>That is why you may put the text within a span element and specify the language attribute for the element.</p>
+		<p>The span element is yet another inline element. One such other inline element that we have not mentioned so far is the anchor element.</p>
+
+		<h3 id = "links" class = "subheading">Links</h3>
+		<p>The anchor element - marked "a" - <a></a>, is used to anchor another webpage onto ours.</p>
+		</br>
+	
+		<p>For example, to anchor Google's ship in port, which Google and any website allows by default by virtue of being publicly open to traffic, you can write the following line:</p>
+		<p>&lta href = "https://www.google.com/search?q=love"&gtSearch for "Love" on Google.&lt/a&gt</p>
+		</br>
+
+		<p>The uses of the anchor element are more than you might expect. Two elements which for now will have less use until we get to menus, or, navigation, though, are the "ol" and "ul" elements.</p>
+	
+		<h3 id = "lists" class = "subheading">Lists</h3>
+		<p>"ol" stands for ordered list, while "ul" stands for unordered list. These lists typically contain several items. As an example, this creates a numerically ordered list of directions for cooking:</p>
+<pre><code>&lth1&gtApple Strudel&lt/h1&gt
+&lth2&gtDirections&lt/h2&gt
+&ltol&gt
+     &ltli&gtPeel and cut the apples in thin slices.&lt/li&gt
+     &ltli&gtRoll out the puff pastry with a rolling pin.&lt/li&gt
+     &ltli&gtSpread the jam over the puff pastry with a spoon.&lt/li&gt
+     &ltli&gtArrange the apple slices over the jam.&lt/li&gt
+     &ltli&gtSprinkle with cinnamon and breadcrumbs.&lt/li&gt
+     &ltli&gtCut tiny pieces of butter and arrange them over the apple slices.&lt/li&gt
+     &ltli&gtRoll the puff pastry edges over, overlapping them.&lt/li&gt
+     &ltli&gtBake for around 40 minutes at 180°C (360° F).&lt/li&gt
+     &ltli&gtCover with powdered sugar.&lt/li&gt
+&lt/ol&gt
+&lta href = "https://based.cooking/apple-strudel/"&gtSource: based.cooking&lt/a&gt</code></pre>
+		</br>
+		<p>The ol element results in numbers being displayed before each list item, similar to a to do list.</p>
+		<p>There are several attributes that may be used such as the "start" attribute or the "reversed" attribute.</p> 
+		<p>See below a use case:</p>
+<pre><code>&ltol start = "1813"&gt
+	&ltli&gt"Battle of Nations" at Leipzig. Napoleon forced out of Germany.&lt/li&gt
+	&ltli&gtMarch, 1814. Paris is taken. Napoleon abdicates in April.&lt/li&gt
+	&ltli&gtNapoleon escapes from Elba in February of 1815. Joined by many of those dissatisfied with the monarchy he returns to Paris on March 20th and takes power, however he is defeated by the Allied powers at the battle of Waterloo and agrees to abdicate rather than attempt to maintain power. End of Napoleonic Wars.&lt/li&gt
+&lt/ol&gt</code></pre>
+		</br>
+
+		<p>it is most certainly possible to, within a list item add multiple paragraphs, links, or other elements which we will encounter.</p>
+		<p>One thing you can't add inside lists, of course, is metadata.</p>
+
+		<h3 id = "icons" class = "subheading">Webpage Icons</h3>
+		<p>One more piece of metadata, a.k.a. data about the page, which we have not added is the icon which is shown when the user opens a tab.</p>
+
+		<p>Using different icons for each page makes matters confusing for users, we have found, and we therefore using the same icon for a particular website.</p> 
+
+		<p>Another piece of advice is to place all images within one folder. The alternative to this, of placing images in the same folders as the files that use them, seems much easier at first, however we have found, on average, to require more time doing the same thing of searching for the files over and over again.</p> 
+
+		<code>&ltlink rel="icon" type="image/webp" href="../pix/terra.webp" /&gt</code>
+		
+		<h3 id = "charsetdigression" class = "subheading">A Brief Digression About Specifying The Chararacter Set</h3> 
+		<p>If you are curious about the reason the meta charset is specified above the title, this is because the title too may be in a language with characters not recognized by default, such as emojis.</p> 
+		<p>This matters also if someone is translating the website and does not know a lot about this. As such, the simplest and most longterm solution is specifying the meta charset at the top.</p>
+		
+		<h3 id = "moreonicons" class = "subheading">More on Icons</h3>
+		<p>However, other than this, ordering everything into groups allows for ease of recognition in what relates to what. Thus, the previous icon line may be added below the metadata elements, together with future linked files such as the "style" file.</p>
+		<p>Before we get into that the next section, it is worth talking a bit about the previous line. It shows that the page links to another file. The relationship of the file to this file is "icon".</p>
+		<p>Then, we see what type of icon it is, this being an attribute only used for icon links. Then, the href attribute, or, HyperText Reference attribute, is one you have met before with links. Here the location of the file is added.</p>
+		</br>
+		<p>Indeed, here too you can use a link to an online icon, however this will result in the file being unaccessible if someone chooses to download the webpage and use it offline, and there is the risk that the image will no longer be at that exact location if changes occur within the website's structure. Even if it is yours, the possibility that you will forget you linked to an image somewhere else and remove it exists and may not be necessary.</p>
+		<p>Finally, to end this lesson, we will look at tables and moving text. Consider the last a bonus, a thank you for choosing to better your life and learn HTML today. We are very thankful to give this to you.</p>
+
+		<h3 id = "tables" class = "subheading">Tables</h3>
+		<p>A table in HTML is marked with the table element.</p> 
+		<p>Typically, inside the table there are multiple rows, marked with the element table row, and within these there are table cells.</p>
+		<p>You can think of this like this:</p>
+<pre>-------
+-------
+-------
+-------</pre>
+		</br>
+
+		<p>You could admittedly do this with the following model as well:</p>
+<pre>||||
+||||
+||||
+||||</pre>
+		</br>
+
+		<p>HTML does it the first way because the second one begins to fall apart once you have more than 10 columns/users unless you introduce an internet with horrizontal, left to right instead of top to bottom scrolling.</p>
+		</br>
+		<p>To give an example of a table:</p>
+<pre><code>&lth2&gtA basic HTML table&lt/h2&gt
+
+&lttable style = "width: 100%;"&gt
+	&lttr&gt
+		&ltth&gtField&lt/th&gt
+		&ltth&gtName&lt/th&gt
+		&ltth&gtCountry&lt/th&gt
+	&lt/tr&gt
+	&lttr&gt
+		&lttd&gtWeb Studies&lt/td&gt
+		&lttd&gtYou&lt/td&gt
+		&lttd&gtElkia&lt/td&gt
+	&lt/tr&gt
+	&lttr&gt
+		&lttd&gtScience&lt/td&gt
+		&lttd&gtAlbert Einstein&lt/td&gt
+		&lttd&gtBlank&lt/td&gt
+	&lt/tr&gt
+&lt/table&gt
+&ltp&gtNote: Example inspired by W3Schools.&lt/p&gt</code></pre>
+		</br>
+
+		<p>There are two things that may attract your awareness in this example. The first row uses elements named <b>"th"</b> while the next two use elements named <b>"td"</b>.</p>
+		<p>"th" stands for "table heading". "td" stands for "table data cell".</p>
+		<p>Table headings are useful due to their unique bold styling that comes by default.</p> 
+		<p>The style attribute sets, through CSS, that the width of the table be 100%, such that the table will stretch out to the maximum length these cells may ocuppy.</p> 
+
+		<h3 id = "movingtext" class = "subheading">Moving Text</h3>
+		<p>The <b>marquee</b> element makes it so text appears on the screen from the right moving to the left by default.</p>
+		<p>For example, <code>&ltmarquee&gtTypical marquee.&lt/marquee&gt</code>.</p>
+		</br>
+
+		<p>Displayed,</p> <!--HTML-only-->
+		<marquee>Typical Marquee.</marquee>
+
+		<p>There are several attributes for you to play with. Five, in fact.</p>
+
+		<ul>
+			<li>behavior: Can be set to "alternate", "scroll" and "slide".</li>
+			<li>direction: Can be set to "up", "down", "left", and "right".</li>
+			<li>scrollamount: How many pixels are scrolled each move. The default is 6.</li>
+			<li>height: How many pixels in height/vertical (|) are available for scrolling.</li>
+			<li>width: How many pixels in width/horrizontal (--) are available for scrolling.</li>
+		</ul>
+		</br>
+		
+		<h3 id = "comments" class = "subheading">Comments</h3>
+		<p>Finally, one more feature of HTML you will often use is comments, which are sections of code that are marked to be ignored.</p>
+		<code>&lt!-- This is a comment --&gt</code>
+
+		<h3 id = "afterHTML" class = "subheading">After HTML</h3>
+		<p>If you enjoyed this tutorial, please don't stop. Try playing around at least with the marquee element.</p>
+		<p>I promise you, it's going to be incredibly amusing and, overall, rewarding.</p>
+
+		<a href = "../cssbasics1" class = "next-link">Next: CSS Basics 1 --></a>
+	</article>
+</body>
+</html>
+

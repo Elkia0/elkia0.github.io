@@ -1,0 +1,114 @@
+/* Table of Contents:
+ * 1. Variables
+ * 2. General Styling
+ * 3. Navigation
+ * 4. Article
+ */
+
+
+/* 1. Variables */
+
+:root {
+	--fs-general: clamp(1.02rem, 2.5vw, 1.3rem);
+
+	--clr-links-base: #40F0E0;
+	--clr-links-hover: #11FF00;
+	
+	--clr-article-bg: rgba(128, 128, 128, 0.5);
+}
+
+
+/* 2. General Styling */ 
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	word-wrap: break-word;
+
+	background-image: url('../pix/limanu.jpeg'); /* Note to readers: By converting to webp this file did not have a smaller size. */
+	background-size: cover;
+	background-repeat: none;
+	background-attachment: fixed;
+
+	font-size: var(--fs-general);
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-links-base);
+}
+
+a:hover { 
+	color: var(--clr-links-hover);
+}
+
+a:focus {
+	border: 2px solid yellow;
+	color: darkgreen;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* 3. Navigation */
+
+nav {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+}
+
+nav a { 
+	display: inline-block;
+
+	background-color: gray;
+	border-left: 3px solid red;  /* border-inline is unsupported by many Browsers before 2020. */
+	border-right: 3px solid red;
+
+	padding: 0.4rem 0.7rem;
+	margin-right: 0.7rem;
+}
+
+
+/* 4. Article */
+
+article {
+	width: min(70ch, 95%);
+	margin-inline: auto;
+	margin-bottom: 2rem;
+	padding: 1.3rem 1.8rem;
+
+	background-color: var(--clr-article-bg);
+
+	border-top: 3px solid gray;
+	border-bottom: 2px solid gray;
+	border-left: 2px solid silver;
+	border-right: 2px solid silver; 
+}
+
+pre {
+	white-space: pre-wrap;      
+	white-space: -moz-pre-wrap;  
+	white-space: -pre-wrap;      
+	white-space: -o-pre-wrap;
+}
+
+code { 
+	color: lime;
+	text-shadow: 2px 2px black;
+}
+
+.subheading { 
+	margin-top: 3rem;
+}
+
+.next-link {
+	display: block;
+	margin-top: 2.5rem;
+}
